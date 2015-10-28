@@ -15,7 +15,7 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
     var tracks = [String]()
     
     override init() {
-        tracks = FileReader.readFiles()
+        tracks = FileOperator.getMp3FilePath()
         print(tracks)
         super.init()
         queueTrack()

@@ -45,6 +45,7 @@ class PlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        FileOperator.makeMusicDir()
         setMusicThumbImage()
         trackTimeLabel.text = "00:00"
         player = MP3Player()

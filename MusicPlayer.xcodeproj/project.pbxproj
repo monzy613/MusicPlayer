@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182464EA1BE0D657004A4242 /* FileOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182464E91BE0D657004A4242 /* FileOperator.swift */; };
 		18F8F7EE1BE0693700FD657F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8F7ED1BE0693700FD657F /* AppDelegate.swift */; };
 		18F8F7F31BE0693700FD657F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F8F7F11BE0693700FD657F /* Main.storyboard */; };
 		18F8F7F61BE0693700FD657F /* MusicPlayer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18F8F7F41BE0693700FD657F /* MusicPlayer.xcdatamodeld */; };
 		18F8F7F81BE0693700FD657F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F8F7F71BE0693700FD657F /* Assets.xcassets */; };
 		18F8F7FB1BE0693700FD657F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F8F7F91BE0693700FD657F /* LaunchScreen.storyboard */; };
 		18F8F8061BE0693700FD657F /* MusicPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8F8051BE0693700FD657F /* MusicPlayerUITests.swift */; };
-		18F8F8111BE06C1B00FD657F /* cry_for_you.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18F8F8101BE06C1B00FD657F /* cry_for_you.mp3 */; };
-		18F8F8131BE06C2200FD657F /* nextToYou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18F8F8121BE06C2200FD657F /* nextToYou.mp3 */; };
 		18F8F8151BE06C5300FD657F /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8F8141BE06C5300FD657F /* FileReader.swift */; };
 		18F8F8171BE06CE400FD657F /* MP3Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8F8161BE06CE400FD657F /* MP3Player.swift */; };
 		18F8F8191BE06FA100FD657F /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8F8181BE06FA100FD657F /* PlayerViewController.swift */; };
@@ -31,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182464E91BE0D657004A4242 /* FileOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileOperator.swift; sourceTree = "<group>"; };
+		182464EB1BE0DDCE004A4242 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		18F8F7EA1BE0693700FD657F /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F8F7ED1BE0693700FD657F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F8F7F21BE0693700FD657F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,8 +42,6 @@
 		18F8F8011BE0693700FD657F /* MusicPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F8F8051BE0693700FD657F /* MusicPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerUITests.swift; sourceTree = "<group>"; };
 		18F8F8071BE0693700FD657F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18F8F8101BE06C1B00FD657F /* cry_for_you.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cry_for_you.mp3; sourceTree = "<group>"; };
-		18F8F8121BE06C2200FD657F /* nextToYou.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nextToYou.mp3; sourceTree = "<group>"; };
 		18F8F8141BE06C5300FD657F /* FileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 		18F8F8161BE06CE400FD657F /* MP3Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MP3Player.swift; sourceTree = "<group>"; };
 		18F8F8181BE06FA100FD657F /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 		18F8F7E11BE0693700FD657F = {
 			isa = PBXGroup;
 			children = (
+				182464EB1BE0DDCE004A4242 /* MyPlayground.playground */,
 				18F8F7EC1BE0693700FD657F /* MusicPlayer */,
 				18F8F8041BE0693700FD657F /* MusicPlayerUITests */,
 				18F8F7EB1BE0693700FD657F /* Products */,
@@ -87,10 +87,9 @@
 		18F8F7EC1BE0693700FD657F /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				18F8F8101BE06C1B00FD657F /* cry_for_you.mp3 */,
-				18F8F8121BE06C2200FD657F /* nextToYou.mp3 */,
 				18F8F7ED1BE0693700FD657F /* AppDelegate.swift */,
 				18F8F8141BE06C5300FD657F /* FileReader.swift */,
+				182464E91BE0D657004A4242 /* FileOperator.swift */,
 				18F8F8161BE06CE400FD657F /* MP3Player.swift */,
 				18F8F8181BE06FA100FD657F /* PlayerViewController.swift */,
 				18F8F7F11BE0693700FD657F /* Main.storyboard */,
@@ -195,9 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F8F7FB1BE0693700FD657F /* LaunchScreen.storyboard in Resources */,
-				18F8F8111BE06C1B00FD657F /* cry_for_you.mp3 in Resources */,
 				18F8F7F81BE0693700FD657F /* Assets.xcassets in Resources */,
-				18F8F8131BE06C2200FD657F /* nextToYou.mp3 in Resources */,
 				18F8F7F31BE0693700FD657F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F8F7F61BE0693700FD657F /* MusicPlayer.xcdatamodeld in Sources */,
+				182464EA1BE0D657004A4242 /* FileOperator.swift in Sources */,
 				18F8F8151BE06C5300FD657F /* FileReader.swift in Sources */,
 				18F8F7EE1BE0693700FD657F /* AppDelegate.swift in Sources */,
 				18F8F8171BE06CE400FD657F /* MP3Player.swift in Sources */,
@@ -408,6 +406,7 @@
 				18F8F80C1BE0693700FD657F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18F8F80D1BE0693700FD657F /* Build configuration list for PBXNativeTarget "MusicPlayerUITests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +415,7 @@
 				18F8F80F1BE0693700FD657F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
