@@ -8,17 +8,20 @@
 
 import UIKit
 
-class PlayerViewController: UIViewController {
+class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     var timer: NSTimer?
     var player: MP3Player?
     var isPlaying = false
     var isSliding = false
-    @IBOutlet var trackTimeLabel: UILabel!
+    @IBOutlet var currentTimeLabel: UILabel!
+    @IBOutlet var durationTimeLabel: UILabel!
+    @IBOutlet var trackNameLabel: UILabel!
     @IBOutlet var playOrPauseButton: UIButton!
     @IBOutlet var progressSlider: UISlider!
     
+    @IBOutlet var musicListTableView: UITableView!
     
     
     @IBAction func startSliding(sender: UISlider) {
@@ -43,11 +46,26 @@ class PlayerViewController: UIViewController {
         switchPlay(true)
     }
     
+    func setNotification() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setTrackInfo:", name: "SetDuration", object: nil)
+    }
+    
+    func setTrackInfo(notification: NSNotification) {
+        let trackInfo = notification.object as! [String: String]
+        print("setTrackInfo:(\(trackInfo))")
+        durationTimeLabel.text = trackInfo["Duration"]
+        trackNameLabel.text = trackInfo["TrackName"]
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        musicListTableView.delegate = self
+        musicListTableView.dataSource = self
+        setNotification()
         FileOperator.makeMusicDir()
         setMusicThumbImage()
-        trackTimeLabel.text = "00:00"
+        currentTimeLabel.text = "00:00"
         player = MP3Player()
         startTimer()
     }
@@ -68,13 +86,13 @@ class PlayerViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(sender: UIButton) {
-        trackTimeLabel.text = "00:00"
+        currentTimeLabel.text = "00:00"
         switchPlay(true)
         player?.next()
     }
     
     @IBAction func preButtonPressed(sender: UIButton) {
-        trackTimeLabel.text = "00:00"
+        currentTimeLabel.text = "00:00"
         switchPlay(true)
         player?.previous()
     }
@@ -107,25 +125,29 @@ class PlayerViewController: UIViewController {
     }
     
     func updateView() {
-        let minutes: Int = Int((player?.getCurrentTime())!) / 60
-        let seconds: Int = Int((player?.getCurrentTime())!) % 60
-        var timeString = ""
-        if minutes >= 10 {
-            timeString += "\(minutes)"
-        } else {
-            timeString += "0\(minutes)"
-        }
-        
-        if seconds >= 10 {
-            timeString += ":\(seconds)"
-        } else {
-            timeString += ":0\(seconds)"
-        }
-        
-        if isSliding == false {
+        currentTimeLabel.text = ToolSet.getTimeString((player?.getCurrentTime())!)
+        if !isSliding {
             progressSlider.value = (player?.getProgress())!
         }
-        trackTimeLabel.text = timeString
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (player?.trackCount)!
+    }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("MusicListCell") as! MusicListCellTableViewCell
+        cell.configureCellWithTrackInfo("\((player?.trackNames[indexPath.row])!)", _trackIndex: indexPath.row)
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        musicListTableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
     
 }

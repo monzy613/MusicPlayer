@@ -23,12 +23,12 @@ class FileOperator: NSObject {
     class func makeMusicDir() {
         let documentPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let newDirectory = "\(documentPath[0])/Musics"
-        print("directory: \(newDirectory)")
+
         do {
             try fileManager.createDirectoryAtPath(newDirectory, withIntermediateDirectories: false, attributes: nil)
         }
         catch {
-            print("makeMusicDir Error \(error)")
+
         }
     }
     

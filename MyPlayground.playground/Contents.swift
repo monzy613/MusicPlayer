@@ -24,3 +24,6 @@ var str = ""
 var nsstr = "secret base ～君がくれたもの～.mp3" as NSString
 
 nsstr.pathExtension
+
+
+(("/Uesrs/apple/testfile.txt" as NSString).stringByDeletingPathExtension as NSString).lastPathComponent

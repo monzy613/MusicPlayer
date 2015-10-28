@@ -13,11 +13,18 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
     var player: AVAudioPlayer?
     var currentTrackIndex = 0
     var tracks = [String]()
+    var trackNames = [String]()
+    var trackCount = 0
     
     override init() {
         tracks = FileOperator.getMp3FilePath()
-        print(tracks)
+        //print(tracks)
         super.init()
+        if tracks.count == 0 {
+            return
+        }
+        trackCount = tracks.count
+        getTrackNames()
         queueTrack()
     }
     
@@ -34,9 +41,18 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
             print("fatal error: \(error)")
             return
         }
-        
         player?.delegate = self
         player?.prepareToPlay()
+        if let duration = player?.duration {
+            let durationString = ToolSet.getTimeString(Float(duration))
+            print("duration: \(durationString)")
+            NSNotificationCenter.defaultCenter().postNotificationName("SetDuration", object: [
+                "Duration": durationString,
+                "TrackName": ((tracks[currentTrackIndex] as NSString).stringByDeletingPathExtension as NSString).lastPathComponent
+                ])
+        } else {
+            print("duration is nil")
+        }
     }
     
     func playOrPause(play: Bool) {
@@ -50,6 +66,13 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
             player?.pause()
         }
         
+    }
+    
+    private func getTrackNames() {
+        trackNames = []
+        for pathName in tracks {
+            trackNames.append(((pathName as NSString).stringByDeletingPathExtension as NSString).lastPathComponent)
+        }
     }
     
     func next() {
