@@ -20,7 +20,10 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet var trackNameLabel: UILabel!
     @IBOutlet var playOrPauseButton: UIButton!
     @IBOutlet var progressSlider: UISlider!
-    
+    @IBOutlet var preTrackButton: UIButton!
+    @IBOutlet var nextTrackButton: UIButton!
+    @IBOutlet var returnButton: UIButton!
+    @IBOutlet var forwardButton: UIButton!
     @IBOutlet var musicListTableView: UITableView!
     
     
@@ -57,17 +60,40 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         trackNameLabel.text = trackInfo["TrackName"]
     }
     
+    func addPageView() {
+        let pageRootViewController = self.storyboard?.instantiateViewControllerWithIdentifier("RootPageViewController")
+        pageRootViewController?.view.frame = CGRect(x: 0, y: 20, width: self.view.frame.width, height: self.view.frame.height - 20 - 4 * 8 - trackNameLabel.frame.height - playOrPauseButton.frame.height - progressSlider.frame.height)
+        self.addChildViewController(pageRootViewController!)
+        self.view.addSubview((pageRootViewController?.view)!)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        musicListTableView.delegate = self
-        musicListTableView.dataSource = self
+        //musicListTableView.delegate = self
+        //musicListTableView.dataSource = self
+        addPageView()
         setNotification()
         FileOperator.makeMusicDir()
         setMusicThumbImage()
         currentTimeLabel.text = "00:00"
+        durationTimeLabel.text = "00:00"
         player = MP3Player()
+        if player?.trackCount == 0 {
+            print("No track")
+            trackNameLabel.text = "No Track"
+            setWidgetEnabled(false)
+            return
+        }
         startTimer()
+    }
+    
+    private func setWidgetEnabled(isEnable: Bool) {
+        returnButton.enabled = isEnable
+        preTrackButton.enabled = isEnable
+        playOrPauseButton.enabled = isEnable
+        nextTrackButton.enabled = isEnable
+        forwardButton.enabled = isEnable
+        progressSlider.enabled = isEnable
     }
     
     private func setMusicThumbImage() {

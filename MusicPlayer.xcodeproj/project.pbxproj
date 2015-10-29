@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		182464EA1BE0D657004A4242 /* FileOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182464E91BE0D657004A4242 /* FileOperator.swift */; };
 		182464ED1BE109E4004A4242 /* ToolSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182464EC1BE109E4004A4242 /* ToolSet.swift */; };
+		186F37521BE1AD85006124B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F374E1BE1AD85006124B4 /* ViewController.swift */; };
+		186F37531BE1AD85006124B4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F374F1BE1AD85006124B4 /* FirstViewController.swift */; };
+		186F37541BE1AD85006124B4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F37501BE1AD85006124B4 /* SecondViewController.swift */; };
+		186F37551BE1AD85006124B4 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F37511BE1AD85006124B4 /* ThirdViewController.swift */; };
 		187B7E121BE1232E00D95DD3 /* MusicListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B7E111BE1232E00D95DD3 /* MusicListCellTableViewCell.swift */; };
 		18F8F7EE1BE0693700FD657F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8F7ED1BE0693700FD657F /* AppDelegate.swift */; };
 		18F8F7F31BE0693700FD657F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F8F7F11BE0693700FD657F /* Main.storyboard */; };
@@ -16,7 +20,6 @@
 		18F8F7F81BE0693700FD657F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F8F7F71BE0693700FD657F /* Assets.xcassets */; };
 		18F8F7FB1BE0693700FD657F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F8F7F91BE0693700FD657F /* LaunchScreen.storyboard */; };
 		18F8F8061BE0693700FD657F /* MusicPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8F8051BE0693700FD657F /* MusicPlayerUITests.swift */; };
-		18F8F8151BE06C5300FD657F /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8F8141BE06C5300FD657F /* FileReader.swift */; };
 		18F8F8171BE06CE400FD657F /* MP3Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8F8161BE06CE400FD657F /* MP3Player.swift */; };
 		18F8F8191BE06FA100FD657F /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8F8181BE06FA100FD657F /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +38,10 @@
 		182464E91BE0D657004A4242 /* FileOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileOperator.swift; sourceTree = "<group>"; };
 		182464EB1BE0DDCE004A4242 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		182464EC1BE109E4004A4242 /* ToolSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolSet.swift; sourceTree = "<group>"; };
+		186F374E1BE1AD85006124B4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		186F374F1BE1AD85006124B4 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		186F37501BE1AD85006124B4 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		186F37511BE1AD85006124B4 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		187B7E111BE1232E00D95DD3 /* MusicListCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListCellTableViewCell.swift; sourceTree = "<group>"; };
 		18F8F7EA1BE0693700FD657F /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F8F7ED1BE0693700FD657F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,7 +53,6 @@
 		18F8F8011BE0693700FD657F /* MusicPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F8F8051BE0693700FD657F /* MusicPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerUITests.swift; sourceTree = "<group>"; };
 		18F8F8071BE0693700FD657F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18F8F8141BE06C5300FD657F /* FileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 		18F8F8161BE06CE400FD657F /* MP3Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MP3Player.swift; sourceTree = "<group>"; };
 		18F8F8181BE06FA100FD657F /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,14 +97,17 @@
 		18F8F7EC1BE0693700FD657F /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				18F8F7ED1BE0693700FD657F /* AppDelegate.swift */,
-				18F8F8141BE06C5300FD657F /* FileReader.swift */,
+				186F374E1BE1AD85006124B4 /* ViewController.swift */,
+				186F374F1BE1AD85006124B4 /* FirstViewController.swift */,
+				186F37501BE1AD85006124B4 /* SecondViewController.swift */,
+				186F37511BE1AD85006124B4 /* ThirdViewController.swift */,
 				182464E91BE0D657004A4242 /* FileOperator.swift */,
 				182464EC1BE109E4004A4242 /* ToolSet.swift */,
 				18F8F8161BE06CE400FD657F /* MP3Player.swift */,
 				18F8F8181BE06FA100FD657F /* PlayerViewController.swift */,
 				187B7E111BE1232E00D95DD3 /* MusicListCellTableViewCell.swift */,
 				18F8F7F11BE0693700FD657F /* Main.storyboard */,
+				18F8F7ED1BE0693700FD657F /* AppDelegate.swift */,
 				18F8F7F71BE0693700FD657F /* Assets.xcassets */,
 				18F8F7F91BE0693700FD657F /* LaunchScreen.storyboard */,
 				18F8F7FC1BE0693700FD657F /* Info.plist */,
@@ -219,13 +228,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186F37531BE1AD85006124B4 /* FirstViewController.swift in Sources */,
 				18F8F7F61BE0693700FD657F /* MusicPlayer.xcdatamodeld in Sources */,
 				182464EA1BE0D657004A4242 /* FileOperator.swift in Sources */,
 				182464ED1BE109E4004A4242 /* ToolSet.swift in Sources */,
-				18F8F8151BE06C5300FD657F /* FileReader.swift in Sources */,
 				18F8F7EE1BE0693700FD657F /* AppDelegate.swift in Sources */,
 				18F8F8171BE06CE400FD657F /* MP3Player.swift in Sources */,
 				187B7E121BE1232E00D95DD3 /* MusicListCellTableViewCell.swift in Sources */,
+				186F37521BE1AD85006124B4 /* ViewController.swift in Sources */,
+				186F37551BE1AD85006124B4 /* ThirdViewController.swift in Sources */,
+				186F37541BE1AD85006124B4 /* SecondViewController.swift in Sources */,
 				18F8F8191BE06FA100FD657F /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,15 +14,10 @@ class FileOperator: NSObject {
     
     static private var musicDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] + "/Musics/"
     
-
-    class func readFiles() -> [String]{
-        getMp3FilePath()
-        return NSBundle.mainBundle().pathsForResourcesOfType("mp3", inDirectory: nil)
-    }
-    
     class func makeMusicDir() {
         let documentPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let newDirectory = "\(documentPath[0])/Musics"
+        print("MusicDirectory: |||\(musicDirectory)|||")
 
         do {
             try fileManager.createDirectoryAtPath(newDirectory, withIntermediateDirectories: false, attributes: nil)
