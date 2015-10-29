@@ -10,10 +10,13 @@ import UIKit
 import AVFoundation
 
 class MP3Player: NSObject, AVAudioPlayerDelegate {
+    static var instance: MP3Player?
     var player: AVAudioPlayer?
     var currentTrackIndex = 0
     var tracks = [String]()
     var trackNames = [String]()
+    var trackAssets = [[String: AnyObject]]()
+    var trackAVURLAssets = [AVURLAsset]()
     var trackCount = 0
     
     override init() {
@@ -23,9 +26,11 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
         if tracks.count == 0 {
             return
         }
+        getTrackAssets(tracks)
         trackCount = tracks.count
         getTrackNames()
         queueTrack()
+        MP3Player.instance = self
     }
     
     func queueTrack() {
@@ -46,12 +51,48 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
         if let duration = player?.duration {
             let durationString = ToolSet.getTimeString(Float(duration))
             print("duration: \(durationString)")
-            NSNotificationCenter.defaultCenter().postNotificationName("SetDuration", object: [
+            NSNotificationCenter.defaultCenter().postNotificationName("SetTrackInfo", object: [
                 "Duration": durationString,
                 "TrackName": ((tracks[currentTrackIndex] as NSString).stringByDeletingPathExtension as NSString).lastPathComponent
                 ])
         } else {
             print("duration is nil")
+        }
+    }
+
+    func getTrackAssets(withPaths: [String]) {
+        for path in withPaths {
+            let musicUrl = NSURL(fileURLWithPath: path)
+            let mp3Asset = AVURLAsset(URL: musicUrl)
+            trackAVURLAssets.append(mp3Asset)
+            var assetDic = [String: AnyObject]()
+            for metaDataItem in mp3Asset.metadata {
+                if metaDataItem.commonKey != nil {
+                    assetDic.updateValue(metaDataItem.value!, forKey: metaDataItem.commonKey!)
+                }
+            }
+            trackAssets.append(assetDic)
+        }
+    }
+    
+    func getArtworkForTrack(trackNumber: Int) -> NSData? {
+        let asset = trackAVURLAssets[trackNumber]
+        var artworkData: NSData = NSData()
+        var isArtworkAvailable = false
+        
+        for format in asset.availableMetadataFormats {
+            for metadata in asset.metadataForFormat(format) {
+                if metadata.commonKey == "artwork" {
+                    artworkData = metadata.value as! NSData
+                    isArtworkAvailable = true
+                }
+            }
+        }
+        
+        if isArtworkAvailable {
+            return artworkData
+        } else {
+            return nil
         }
     }
     
@@ -61,8 +102,10 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
         }
         
         if play {
+            NSNotificationCenter.defaultCenter().postNotificationName("PlayToRotate", object: nil)
             player?.play()
         } else {
+            NSNotificationCenter.defaultCenter().postNotificationName("PauseToStopRotate", object: nil)
             player?.pause()
         }
         
@@ -76,6 +119,9 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
     }
     
     func next() {
+        if player?.playing == false {
+            NSNotificationCenter.defaultCenter().postNotificationName("PlayToRotate", object: nil)
+        }
         if currentTrackIndex == (tracks.count - 1) {
             currentTrackIndex = 0
         } else {
@@ -86,6 +132,9 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
     }
     
     func previous() {
+        if player?.playing == false {
+            NSNotificationCenter.defaultCenter().postNotificationName("PlayToRotate", object: nil)
+        }
         if currentTrackIndex == 0 {
             currentTrackIndex = tracks.count - 1
         } else {
@@ -102,6 +151,7 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
         } else {
             player?.currentTime = 0
         }
+        NSNotificationCenter.defaultCenter().postNotificationName("PlayToRotate", object: nil)
         player?.play()
     }
     
@@ -112,6 +162,7 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
         } else {
             next()
         }
+        NSNotificationCenter.defaultCenter().postNotificationName("PlayToRotate", object: nil)
         player?.play()
     }
     
@@ -121,6 +172,7 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
     
     func setProgress(newProgress: Float) {
         player?.currentTime = Double(getDuration() * newProgress)
+        NSNotificationCenter.defaultCenter().postNotificationName("PlayToRotate", object: nil)
         player?.play()
     }
     

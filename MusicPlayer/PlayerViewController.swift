@@ -53,7 +53,7 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func setNotification() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setTrackInfo:", name: "SetDuration", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setTrackInfo:", name: "SetTrackInfo", object: nil)
     }
     
     func setTrackInfo(notification: NSNotification) {
@@ -66,7 +66,7 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func addPageView() {
         pageRootViewController = self.storyboard?.instantiateViewControllerWithIdentifier("RootPageViewController") as? PageRootViewController
         pageRootViewController!.setFirstTableView(self, _tableViewDataSource: self)
-        pageRootViewController!.view.frame = CGRect(x: 0, y: 20, width: self.view.frame.width, height: self.view.frame.height - 4 * 8 - trackNameLabel.frame.height - playOrPauseButton.frame.height - progressSlider.frame.height)
+        pageRootViewController!.view.frame = CGRect(x: 0, y: 20, width: self.view.frame.width, height: self.view.frame.height - 20 - 4 * 8 - trackNameLabel.frame.height - playOrPauseButton.frame.height - progressSlider.frame.height)
         self.addChildViewController(pageRootViewController!)
         self.view.addSubview(pageRootViewController!.view)
     }

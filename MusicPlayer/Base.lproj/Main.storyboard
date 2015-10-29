@@ -266,6 +266,68 @@
             </objects>
             <point key="canvasLocation" x="18" y="1105"/>
         </scene>
+        <!--Test Rotate View Controller-->
+        <scene sceneID="YCZ-oz-PZS">
+            <objects>
+                <viewController id="aCe-ob-9hc" customClass="TestRotateViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fCz-v8-IXU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Loc-2M-mSy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rQO-53-H4L">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicns_iTunes" translatesAutoresizingMaskIntoConstraints="NO" id="ykF-ls-szX" customClass="RotateImageView" customModule="MusicPlayer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ykF-ls-szX" secondAttribute="height" multiplier="1:1" id="hIf-yR-0XU"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfK-0d-aez">
+                                <rect key="frame" x="0.0" y="20" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="switch:" destination="aCe-ob-9hc" eventType="touchUpInside" id="R12-vg-6mb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="me5-RP-6bo">
+                                <rect key="frame" x="554" y="20" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="startRotating:" destination="aCe-ob-9hc" eventType="touchUpInside" id="dpA-81-ikO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VfK-0d-aez" firstAttribute="top" secondItem="fCz-v8-IXU" secondAttribute="bottom" id="Adh-GJ-sgU"/>
+                            <constraint firstAttribute="trailing" secondItem="me5-RP-6bo" secondAttribute="trailing" id="RGt-o3-inv"/>
+                            <constraint firstItem="VfK-0d-aez" firstAttribute="leading" secondItem="rQO-53-H4L" secondAttribute="leading" id="dlZ-9z-Xc5"/>
+                            <constraint firstItem="ykF-ls-szX" firstAttribute="height" secondItem="rQO-53-H4L" secondAttribute="height" id="e4N-zM-P7Q"/>
+                            <constraint firstItem="ykF-ls-szX" firstAttribute="width" secondItem="rQO-53-H4L" secondAttribute="width" id="hfW-XP-Pex"/>
+                            <constraint firstItem="ykF-ls-szX" firstAttribute="centerY" secondItem="rQO-53-H4L" secondAttribute="centerY" id="naz-Up-d2B"/>
+                            <constraint firstItem="ykF-ls-szX" firstAttribute="centerX" secondItem="rQO-53-H4L" secondAttribute="centerX" id="qRx-Pl-2AF"/>
+                            <constraint firstItem="me5-RP-6bo" firstAttribute="top" secondItem="fCz-v8-IXU" secondAttribute="bottom" id="yaU-tr-yBN"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="e4N-zM-P7Q"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="rotateImageView" destination="ykF-ls-szX" id="LW0-cb-S2h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EzC-Gm-EmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="634" y="-382"/>
+        </scene>
         <!--Page Root View Controller-->
         <scene sceneID="VAQ-gf-nIe">
             <objects>
@@ -419,30 +481,21 @@
                         <viewControllerLayoutGuide type="bottom" id="JhI-8n-JKi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="I7Z-nl-yfB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpI-34-gmc">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="200"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="bpI-34-gmc" firstAttribute="centerX" secondItem="I7Z-nl-yfB" secondAttribute="centerX" id="KF4-EK-TL8"/>
-                            <constraint firstItem="bpI-34-gmc" firstAttribute="centerY" secondItem="I7Z-nl-yfB" secondAttribute="centerY" id="Zsr-PH-n3C"/>
-                            <constraint firstItem="bpI-34-gmc" firstAttribute="height" secondItem="I7Z-nl-yfB" secondAttribute="height" id="n16-XV-bat"/>
-                            <constraint firstItem="bpI-34-gmc" firstAttribute="width" secondItem="I7Z-nl-yfB" secondAttribute="width" id="qMb-wQ-TZa"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="percent">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7EZ-vd-Lym" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2306" y="304"/>
+            <point key="canvasLocation" x="2530.5" y="299.5"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="Gq8-5X-bG6">
@@ -480,6 +533,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="appicns_iTunes" width="513" height="513"/>
         <image name="next" width="204" height="204"/>
         <image name="next_10sec" width="204" height="204"/>
         <image name="play_green" width="204" height="204"/>
