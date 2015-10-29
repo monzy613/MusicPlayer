@@ -8,8 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPageViewControllerDataSource, UIScrollViewDelegate, UIPageViewControllerDelegate {
-
+class PageRootViewController: UIViewController, UIPageViewControllerDataSource, UIScrollViewDelegate, UIPageViewControllerDelegate {
+    
+    var firstIdentifier: String?
+    var secondIdentifier: String?
+    var thirdIdentifier: String?
+    
+    var tableViewDelegate: UITableViewDelegate?
+    var tableViewDataSource: UITableViewDataSource?
+    
+    var trackTableViewController: FirstViewController?
+    
     @IBOutlet var firstButton: UIButton!
     @IBOutlet var secondButton: UIButton!
     @IBOutlet var thirdButton: UIButton!
@@ -18,6 +27,11 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIScroll
     var isDraggingRight = true
     var pageViewController: UIPageViewController?
     var pageControl: UIPageControl?
+    
+    func setFirstTableView(_tableViewDelegate: UITableViewDelegate, _tableViewDataSource: UITableViewDataSource) {
+        self.tableViewDelegate = _tableViewDelegate
+        self.tableViewDataSource = _tableViewDataSource
+    }
     
     
     @IBAction func firstButtonPressed(sender: UIButton) {
@@ -28,7 +42,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIScroll
         if currentPage > 0 {
             animationDirection = .Reverse
         }
-        pageViewController?.setViewControllers([(self.storyboard?.instantiateViewControllerWithIdentifier("FirstViewController"))!], direction: animationDirection, animated: true, completion: nil)
+//        pageViewController?.setViewControllers([(self.storyboard?.instantiateViewControllerWithIdentifier(firstIdentifier!))!], direction: animationDirection, animated: true, completion: nil)
+        pageViewController?.setViewControllers([trackTableViewController!], direction: animationDirection, animated: true, completion: nil)
         currentPage = 0
         setCurrentIndex(0)
     }
@@ -43,7 +58,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIScroll
         } else {
             animationDirection = .Forward
         }
-        pageViewController?.setViewControllers([(self.storyboard?.instantiateViewControllerWithIdentifier("SecondViewController"))!], direction: animationDirection, animated: true, completion: nil)
+        pageViewController?.setViewControllers([(self.storyboard?.instantiateViewControllerWithIdentifier(secondIdentifier!))!], direction: animationDirection, animated: true, completion: nil)
         currentPage = 1
         setCurrentIndex(1)
     }
@@ -56,7 +71,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIScroll
         if currentPage < 2 {
             animationDirection = .Forward
         }
-        pageViewController?.setViewControllers([(self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewController"))!], direction: animationDirection, animated: true, completion: nil)
+        pageViewController?.setViewControllers([(self.storyboard?.instantiateViewControllerWithIdentifier(thirdIdentifier!))!], direction: animationDirection, animated: true, completion: nil)
         currentPage = 2
         setCurrentIndex(2)
     }
@@ -64,19 +79,36 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIScroll
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
+        
+        if firstIdentifier == nil {
+            firstIdentifier = "FirstViewController"
+        }
+        if secondIdentifier == nil {
+            secondIdentifier = "SecondViewController"
+        }
+        if thirdIdentifier == nil {
+            thirdIdentifier = "ThirdViewController"
+        }
+        
+        pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? UIPageViewController
         for sView in pageViewController!.view.subviews {
             if sView.isKindOfClass(UIScrollView) {
                 (sView as! UIScrollView).delegate = self
             }
         }
-
+        
         pageViewController?.dataSource = self
         pageViewController?.delegate = self
-        pageViewController?.setViewControllers([(self.storyboard?.instantiateViewControllerWithIdentifier("FirstViewController"))!], direction: .Forward, animated: true, completion: nil)
+        
+        trackTableViewController = (self.storyboard?.instantiateViewControllerWithIdentifier(firstIdentifier!))! as? FirstViewController
+        trackTableViewController!.trackTableViewDelegate = self.tableViewDelegate
+        trackTableViewController!.trackTableViewDataSource = self.tableViewDataSource
+        
+        pageViewController?.setViewControllers([trackTableViewController!], direction: .Forward, animated: true, completion: nil)
+//        pageViewController?.setViewControllers([(self.storyboard?.instantiateViewControllerWithIdentifier(firstIdentifier!))!], direction: .Forward, animated: true, completion: nil)
         pageViewController?.view.frame = CGRect(x: 0, y: 30, width: self.view.frame.width, height: self.view.frame.height - 30)
         self.addChildViewController(pageViewController!)
         self.view.addSubview((pageViewController?.view)!)
@@ -126,7 +158,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIScroll
             thirdButton.backgroundColor = .whiteColor()
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -134,32 +166,33 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIScroll
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         if viewController.isKindOfClass(FirstViewController) {
-            return self.storyboard?.instantiateViewControllerWithIdentifier("SecondViewController")
+            return self.storyboard?.instantiateViewControllerWithIdentifier(secondIdentifier!)
         } else if viewController.isKindOfClass(SecondViewController) {
-            return self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewController")
+            return self.storyboard?.instantiateViewControllerWithIdentifier(thirdIdentifier!)
         } else if viewController.isKindOfClass(ThirdViewController) {
             return nil
         } else {
             return nil
         }
-
+        
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         if viewController.isKindOfClass(FirstViewController) {
             return nil
         } else if viewController.isKindOfClass(SecondViewController) {
-            return self.storyboard?.instantiateViewControllerWithIdentifier("FirstViewController")
+//            return self.storyboard?.instantiateViewControllerWithIdentifier(firstIdentifier!)
+            return trackTableViewController
         } else if viewController.isKindOfClass(ThirdViewController) {
-            return self.storyboard?.instantiateViewControllerWithIdentifier("SecondViewController")
-
+            return self.storyboard?.instantiateViewControllerWithIdentifier(secondIdentifier!)
+            
         } else {
             return nil
         }
     }
     
     
-
+    
     func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if velocity.x > 0 {
             //-->
@@ -190,7 +223,14 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIScroll
         }
     }
     
+    func getTrackTableViewController() {
+        let firstViewController = (self.storyboard?.instantiateViewControllerWithIdentifier(firstIdentifier!))! as! FirstViewController
+        firstViewController.trackTableViewDelegate = self.tableViewDelegate
+        firstViewController.trackTableViewDataSource = self.tableViewDataSource
+        
+    }
     
-
+    
+    
 }
 

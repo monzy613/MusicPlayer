@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		182464EA1BE0D657004A4242 /* FileOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182464E91BE0D657004A4242 /* FileOperator.swift */; };
 		182464ED1BE109E4004A4242 /* ToolSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182464EC1BE109E4004A4242 /* ToolSet.swift */; };
-		186F37521BE1AD85006124B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F374E1BE1AD85006124B4 /* ViewController.swift */; };
 		186F37531BE1AD85006124B4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F374F1BE1AD85006124B4 /* FirstViewController.swift */; };
 		186F37541BE1AD85006124B4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F37501BE1AD85006124B4 /* SecondViewController.swift */; };
 		186F37551BE1AD85006124B4 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F37511BE1AD85006124B4 /* ThirdViewController.swift */; };
+		186F37571BE1B553006124B4 /* PageRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F37561BE1B553006124B4 /* PageRootViewController.swift */; };
 		187B7E121BE1232E00D95DD3 /* MusicListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B7E111BE1232E00D95DD3 /* MusicListCellTableViewCell.swift */; };
 		18F8F7EE1BE0693700FD657F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8F7ED1BE0693700FD657F /* AppDelegate.swift */; };
 		18F8F7F31BE0693700FD657F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F8F7F11BE0693700FD657F /* Main.storyboard */; };
@@ -38,10 +38,10 @@
 		182464E91BE0D657004A4242 /* FileOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileOperator.swift; sourceTree = "<group>"; };
 		182464EB1BE0DDCE004A4242 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		182464EC1BE109E4004A4242 /* ToolSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolSet.swift; sourceTree = "<group>"; };
-		186F374E1BE1AD85006124B4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		186F374F1BE1AD85006124B4 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		186F37501BE1AD85006124B4 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		186F37511BE1AD85006124B4 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		186F37561BE1B553006124B4 /* PageRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageRootViewController.swift; sourceTree = "<group>"; };
 		187B7E111BE1232E00D95DD3 /* MusicListCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListCellTableViewCell.swift; sourceTree = "<group>"; };
 		18F8F7EA1BE0693700FD657F /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F8F7ED1BE0693700FD657F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		18F8F7EC1BE0693700FD657F /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				186F374E1BE1AD85006124B4 /* ViewController.swift */,
+				186F37561BE1B553006124B4 /* PageRootViewController.swift */,
 				186F374F1BE1AD85006124B4 /* FirstViewController.swift */,
 				186F37501BE1AD85006124B4 /* SecondViewController.swift */,
 				186F37511BE1AD85006124B4 /* ThirdViewController.swift */,
@@ -235,7 +235,7 @@
 				18F8F7EE1BE0693700FD657F /* AppDelegate.swift in Sources */,
 				18F8F8171BE06CE400FD657F /* MP3Player.swift in Sources */,
 				187B7E121BE1232E00D95DD3 /* MusicListCellTableViewCell.swift in Sources */,
-				186F37521BE1AD85006124B4 /* ViewController.swift in Sources */,
+				186F37571BE1B553006124B4 /* PageRootViewController.swift in Sources */,
 				186F37551BE1AD85006124B4 /* ThirdViewController.swift in Sources */,
 				186F37541BE1AD85006124B4 /* SecondViewController.swift in Sources */,
 				18F8F8191BE06FA100FD657F /* PlayerViewController.swift in Sources */,

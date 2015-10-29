@@ -206,7 +206,6 @@
                         <outlet property="currentTimeLabel" destination="9By-r0-cae" id="FZp-mC-tWV"/>
                         <outlet property="durationTimeLabel" destination="XAr-f8-tiB" id="uFL-eP-lsc"/>
                         <outlet property="forwardButton" destination="fka-vB-sx6" id="B7x-MV-v85"/>
-                        <outlet property="musicListTableView" destination="Ag9-Kt-OIe" id="woG-SC-0R8"/>
                         <outlet property="nextTrackButton" destination="ivo-R1-oLY" id="GpG-w1-7gT"/>
                         <outlet property="playOrPauseButton" destination="lQz-At-sLl" id="3Gg-b8-a3R"/>
                         <outlet property="preTrackButton" destination="YCK-i1-U9n" id="iTQ-XT-VPd"/>
@@ -219,65 +218,58 @@
             </objects>
             <point key="canvasLocation" x="113.5" y="322.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="vLW-eB-Tq1">
+        <!--Table View Controller-->
+        <scene sceneID="mgR-fg-84p">
             <objects>
-                <viewController id="2CB-OB-3Cl" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ei8-14-lQM"/>
-                        <viewControllerLayoutGuide type="bottom" id="8Wy-lY-lPK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gI0-5J-9bJ">
+                <tableViewController storyboardIdentifier="TrackTableViewController" id="75J-wO-qEN" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="a5q-uL-u5M">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ag9-Kt-OIe">
-                                <rect key="frame" x="166" y="28" width="375" height="489"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MusicListCell" rowHeight="56" id="xBa-jI-qn4" customClass="MusicListCellTableViewCell" customModule="MusicPlayer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="56"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xBa-jI-qn4" id="9i4-LV-gO7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="trackname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ms-ih-HQ2">
-                                                    <rect key="frame" x="8" y="8" width="359" height="25"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="leadingMargin" secondItem="1Ms-ih-HQ2" secondAttribute="leading" id="T16-HV-2vc"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="1Ms-ih-HQ2" secondAttribute="trailing" id="q34-33-xgy"/>
-                                                <constraint firstAttribute="topMargin" secondItem="1Ms-ih-HQ2" secondAttribute="top" id="xFq-hW-9hj"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <connections>
-                                            <outlet property="trackNameLabel" destination="1Ms-ih-HQ2" id="VQf-CY-GQD"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bll-bC-Kkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MusicListCell" rowHeight="56" id="d4g-NC-3c3" customClass="MusicListCellTableViewCell" customModule="MusicPlayer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d4g-NC-3c3" id="HXX-Io-715">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="trackname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbK-QD-wa4">
+                                            <rect key="frame" x="8" y="8" width="359" height="25"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="SbK-QD-wa4" secondAttribute="trailing" id="cat-kL-Hbh"/>
+                                        <constraint firstAttribute="topMargin" secondItem="SbK-QD-wa4" secondAttribute="top" id="g3k-Ij-hHN"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="SbK-QD-wa4" secondAttribute="leading" id="qtx-xn-9ll"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="trackNameLabel" destination="SbK-QD-wa4" id="IYe-vP-ERt"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="75J-wO-qEN" id="KZP-V4-les"/>
+                            <outlet property="delegate" destination="75J-wO-qEN" id="ExV-d5-c4z"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Tz-02-Ois" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="609" y="1103"/>
+            <point key="canvasLocation" x="18" y="1105"/>
         </scene>
-        <!--View Controller-->
+        <!--Page Root View Controller-->
         <scene sceneID="VAQ-gf-nIe">
             <objects>
-                <viewController storyboardIdentifier="RootPageViewController" id="2jk-Dv-AJ3" customClass="ViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RootPageViewController" id="2jk-Dv-AJ3" customClass="PageRootViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i4f-PM-DGI"/>
                         <viewControllerLayoutGuide type="bottom" id="zao-Qa-jjL"/>
@@ -292,7 +284,7 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <state key="normal" title="Second"/>
                                 <connections>
-                                    <action selector="secondButtonPressed:" destination="2jk-Dv-AJ3" eventType="touchUpInside" id="CSe-W6-LaO"/>
+                                    <action selector="secondButtonPressed:" destination="2jk-Dv-AJ3" eventType="touchUpInside" id="tWz-DQ-wZw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ShR-Ze-74g">
@@ -301,7 +293,7 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <state key="normal" title="Third"/>
                                 <connections>
-                                    <action selector="thirdButtonPressed:" destination="2jk-Dv-AJ3" eventType="touchUpInside" id="Une-Uv-CJk"/>
+                                    <action selector="thirdButtonPressed:" destination="2jk-Dv-AJ3" eventType="touchUpInside" id="cUw-cl-Vxk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ur-zO-NZm">
@@ -310,7 +302,7 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <state key="normal" title="First"/>
                                 <connections>
-                                    <action selector="firstButtonPressed:" destination="2jk-Dv-AJ3" eventType="touchUpInside" id="vUq-Ti-4X3"/>
+                                    <action selector="firstButtonPressed:" destination="2jk-Dv-AJ3" eventType="touchUpInside" id="hjK-NE-wFX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -337,9 +329,9 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="firstButton" destination="2ur-zO-NZm" id="BHC-jx-mnR"/>
-                        <outlet property="secondButton" destination="Kw3-YC-bfv" id="Y5c-V3-kpH"/>
-                        <outlet property="thirdButton" destination="ShR-Ze-74g" id="eXf-Xf-dSG"/>
+                        <outlet property="firstButton" destination="2ur-zO-NZm" id="TEw-lW-EZu"/>
+                        <outlet property="secondButton" destination="Kw3-YC-bfv" id="cQN-3y-dbC"/>
+                        <outlet property="thirdButton" destination="ShR-Ze-74g" id="gYQ-64-3XN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7I-Mb-cdR" sceneMemberID="firstResponder"/>
@@ -366,23 +358,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teH-FK-OMv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1oN-ke-0nJ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="200"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MusicListCell" rowHeight="56" id="S4Y-Dy-olx" customClass="MusicListCellTableViewCell" customModule="MusicPlayer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S4Y-Dy-olx" id="0Ka-aF-WfW">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="trackname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esO-BE-VrZ">
+                                                    <rect key="frame" x="8" y="8" width="584" height="25"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="leadingMargin" secondItem="esO-BE-VrZ" secondAttribute="leading" id="BC3-ei-x1C"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="esO-BE-VrZ" secondAttribute="trailing" id="RVz-yN-roG"/>
+                                                <constraint firstAttribute="topMargin" secondItem="esO-BE-VrZ" secondAttribute="top" id="y9g-EF-rbw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="trackNameLabel" destination="esO-BE-VrZ" id="Eoe-O9-5Ha"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="teH-FK-OMv" firstAttribute="centerY" secondItem="GWC-OT-8tL" secondAttribute="centerY" id="6Ge-9k-eP4"/>
-                            <constraint firstItem="teH-FK-OMv" firstAttribute="centerX" secondItem="GWC-OT-8tL" secondAttribute="centerX" id="BrJ-Z2-LCM"/>
-                            <constraint firstItem="teH-FK-OMv" firstAttribute="height" secondItem="GWC-OT-8tL" secondAttribute="height" id="cgL-yI-dep"/>
-                            <constraint firstItem="teH-FK-OMv" firstAttribute="width" secondItem="GWC-OT-8tL" secondAttribute="width" id="eJW-Hg-fyU"/>
+                            <constraint firstItem="1oN-ke-0nJ" firstAttribute="centerY" secondItem="GWC-OT-8tL" secondAttribute="centerY" id="MWu-f6-VE1"/>
+                            <constraint firstItem="1oN-ke-0nJ" firstAttribute="width" secondItem="GWC-OT-8tL" secondAttribute="width" id="U56-r7-Yja"/>
+                            <constraint firstItem="1oN-ke-0nJ" firstAttribute="centerX" secondItem="GWC-OT-8tL" secondAttribute="centerX" id="g1k-js-GTQ"/>
+                            <constraint firstItem="1oN-ke-0nJ" firstAttribute="height" secondItem="GWC-OT-8tL" secondAttribute="height" id="k9n-lX-JBH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="trackTableView" destination="1oN-ke-0nJ" id="RpH-Zd-u8e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwm-Bd-Gf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

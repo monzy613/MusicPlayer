@@ -15,6 +15,9 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var player: MP3Player?
     var isPlaying = false
     var isSliding = false
+    
+    var pageRootViewController: PageRootViewController?
+    
     @IBOutlet var currentTimeLabel: UILabel!
     @IBOutlet var durationTimeLabel: UILabel!
     @IBOutlet var trackNameLabel: UILabel!
@@ -61,10 +64,11 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func addPageView() {
-        let pageRootViewController = self.storyboard?.instantiateViewControllerWithIdentifier("RootPageViewController")
-        pageRootViewController?.view.frame = CGRect(x: 0, y: 20, width: self.view.frame.width, height: self.view.frame.height - 20 - 4 * 8 - trackNameLabel.frame.height - playOrPauseButton.frame.height - progressSlider.frame.height)
+        pageRootViewController = self.storyboard?.instantiateViewControllerWithIdentifier("RootPageViewController") as? PageRootViewController
+        pageRootViewController!.setFirstTableView(self, _tableViewDataSource: self)
+        pageRootViewController!.view.frame = CGRect(x: 0, y: 20, width: self.view.frame.width, height: self.view.frame.height - 4 * 8 - trackNameLabel.frame.height - playOrPauseButton.frame.height - progressSlider.frame.height)
         self.addChildViewController(pageRootViewController!)
-        self.view.addSubview((pageRootViewController?.view)!)
+        self.view.addSubview(pageRootViewController!.view)
     }
     
     override func viewDidLoad() {
@@ -164,12 +168,12 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MusicListCell") as! MusicListCellTableViewCell
-        cell.configureCellWithTrackInfo("\((player?.trackNames[indexPath.row])!)", _trackIndex: indexPath.row)
+        cell.configureCellWithTrackInfo("\((player?.trackNames[indexPath.row])!)", _trackIndex: indexPath.row + 1)
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        musicListTableView.deselectRowAtIndexPath(indexPath, animated: true)
+        pageRootViewController?.trackTableViewController?.trackTableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

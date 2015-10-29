@@ -8,11 +8,16 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITableViewDelegate {
 
+    
+    var trackTableViewDelegate: UITableViewDelegate?
+    var trackTableViewDataSource: UITableViewDataSource?
+    @IBOutlet var trackTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        trackTableView.delegate = trackTableViewDelegate
+        trackTableView.dataSource = trackTableViewDataSource
         // Do any additional setup after loading the view.
     }
 
