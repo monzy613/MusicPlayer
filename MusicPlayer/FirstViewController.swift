@@ -27,6 +27,7 @@ class FirstViewController: UIViewController, UITableViewDelegate {
     }
     
     func reloadData() {
+        MP3Player.instance?.refreshTracks()
         trackTableView?.reloadData()
     }
 

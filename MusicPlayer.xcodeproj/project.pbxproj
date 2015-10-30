@@ -46,6 +46,7 @@
 		186F37551BE1AD85006124B4 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F37511BE1AD85006124B4 /* ThirdViewController.swift */; };
 		186F37571BE1B553006124B4 /* PageRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F37561BE1B553006124B4 /* PageRootViewController.swift */; };
 		187B7E121BE1232E00D95DD3 /* MusicListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B7E111BE1232E00D95DD3 /* MusicListCellTableViewCell.swift */; };
+		18C5278E1BE44C12001C293A /* TrackListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5278D1BE44C12001C293A /* TrackListCell.swift */; };
 		18F8F7EE1BE0693700FD657F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F8F7ED1BE0693700FD657F /* AppDelegate.swift */; };
 		18F8F7F31BE0693700FD657F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F8F7F11BE0693700FD657F /* Main.storyboard */; };
 		18F8F7F61BE0693700FD657F /* MusicPlayer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18F8F7F41BE0693700FD657F /* MusicPlayer.xcdatamodeld */; };
@@ -108,6 +109,7 @@
 		186F37511BE1AD85006124B4 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		186F37561BE1B553006124B4 /* PageRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageRootViewController.swift; sourceTree = "<group>"; };
 		187B7E111BE1232E00D95DD3 /* MusicListCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListCellTableViewCell.swift; sourceTree = "<group>"; };
+		18C5278D1BE44C12001C293A /* TrackListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackListCell.swift; sourceTree = "<group>"; };
 		18F8F7EA1BE0693700FD657F /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F8F7ED1BE0693700FD657F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F8F7F21BE0693700FD657F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				18F8F8161BE06CE400FD657F /* MP3Player.swift */,
 				18F8F8181BE06FA100FD657F /* PlayerViewController.swift */,
 				187B7E111BE1232E00D95DD3 /* MusicListCellTableViewCell.swift */,
+				18C5278D1BE44C12001C293A /* TrackListCell.swift */,
 				185F3E191BE23F870047644B /* RotateImageView.swift */,
 				18F8F7F11BE0693700FD657F /* Main.storyboard */,
 				185F3E1B1BE242340047644B /* TestRotateViewController.swift */,
@@ -357,6 +360,7 @@
 				18F8F7EE1BE0693700FD657F /* AppDelegate.swift in Sources */,
 				18F8F8171BE06CE400FD657F /* MP3Player.swift in Sources */,
 				185F3DFF1BE2372B0047644B /* DesignableImageView.swift in Sources */,
+				18C5278E1BE44C12001C293A /* TrackListCell.swift in Sources */,
 				187B7E121BE1232E00D95DD3 /* MusicListCellTableViewCell.swift in Sources */,
 				185F3E041BE2372B0047644B /* DesignableView.swift in Sources */,
 				185F3E151BE2372B0047644B /* TransitionZoom.swift in Sources */,

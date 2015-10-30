@@ -28,13 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
-        print("handleOpenUrl: \(url)")
-        FileOperator.storeMusicWithPath("\(url)")
+        print("handleOpenUrl: \(url.path!)")
+        FileOperator.storeMusicWithPath("\(url.path!)")
         NSNotificationCenter.defaultCenter().postNotificationName("ReloadData", object: nil)
-//        if let player = MP3Player.instance {
-//            player.refreshTracks()
-//            NSNotificationCenter.defaultCenter().postNotificationName("ReloadData", object: nil)
-//        }
         return true
     }
     

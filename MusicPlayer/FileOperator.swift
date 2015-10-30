@@ -31,6 +31,7 @@ class FileOperator: NSObject {
         do {
             var pathComponents = (path as NSString).pathComponents
             let filename = (path as NSString).lastPathComponent
+            print("[FILE to store]\(filename)")
             pathComponents.removeFirst()
             pathComponents.removeFirst()
             pathComponents.insert("/", atIndex: 0)
