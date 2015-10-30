@@ -10,8 +10,14 @@ import UIKit
 
 class ThirdViewController: UIViewController {
 
+    @IBOutlet var consoleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let console = DebugClass.console {
+            consoleLabel.text = console
+        } else {
+            consoleLabel.text = "no console"
+        }
 
         // Do any additional setup after loading the view.
     }

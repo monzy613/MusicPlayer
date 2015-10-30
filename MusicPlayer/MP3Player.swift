@@ -21,7 +21,6 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
     
     override init() {
         tracks = FileOperator.getMp3FilePath()
-        //print(tracks)
         super.init()
         if tracks.count == 0 {
             return
@@ -31,6 +30,13 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
         getTrackNames()
         queueTrack()
         MP3Player.instance = self
+    }
+    
+    func refreshTracks() {
+        tracks = FileOperator.getMp3FilePath()
+        getTrackAssets(tracks)
+        trackCount = tracks.count
+        getTrackNames()
     }
     
     func queueTrack() {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		182464EA1BE0D657004A4242 /* FileOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182464E91BE0D657004A4242 /* FileOperator.swift */; };
 		182464ED1BE109E4004A4242 /* ToolSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182464EC1BE109E4004A4242 /* ToolSet.swift */; };
+		18295E1D1BE2FFFC0035EFA7 /* DebugClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18295E1C1BE2FFFC0035EFA7 /* DebugClass.swift */; };
 		185F3DFA1BE2372B0047644B /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F3DDC1BE2372B0047644B /* AsyncButton.swift */; };
 		185F3DFB1BE2372B0047644B /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F3DDD1BE2372B0047644B /* AsyncImageView.swift */; };
 		185F3DFC1BE2372B0047644B /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185F3DDE1BE2372B0047644B /* AutoTextView.swift */; };
@@ -69,6 +70,7 @@
 		182464E91BE0D657004A4242 /* FileOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileOperator.swift; sourceTree = "<group>"; };
 		182464EB1BE0DDCE004A4242 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		182464EC1BE109E4004A4242 /* ToolSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolSet.swift; sourceTree = "<group>"; };
+		18295E1C1BE2FFFC0035EFA7 /* DebugClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugClass.swift; sourceTree = "<group>"; };
 		185F3DDC1BE2372B0047644B /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		185F3DDD1BE2372B0047644B /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		185F3DDE1BE2372B0047644B /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				18F8F7F11BE0693700FD657F /* Main.storyboard */,
 				185F3E1B1BE242340047644B /* TestRotateViewController.swift */,
 				18F8F7ED1BE0693700FD657F /* AppDelegate.swift */,
+				18295E1C1BE2FFFC0035EFA7 /* DebugClass.swift */,
 				18F8F7F71BE0693700FD657F /* Assets.xcassets */,
 				18F8F7F91BE0693700FD657F /* LaunchScreen.storyboard */,
 				18F8F7FC1BE0693700FD657F /* Info.plist */,
@@ -343,6 +346,7 @@
 				185F3E0C1BE2372B0047644B /* Spring.swift in Sources */,
 				185F3E071BE2372B0047644B /* KeyboardLayoutConstraint.swift in Sources */,
 				185F3E0E1BE2372B0047644B /* SpringButton.swift in Sources */,
+				18295E1D1BE2FFFC0035EFA7 /* DebugClass.swift in Sources */,
 				185F3E131BE2372B0047644B /* SpringView.swift in Sources */,
 				18F8F7F61BE0693700FD657F /* MusicPlayer.xcdatamodeld in Sources */,
 				185F3E1A1BE23F870047644B /* RotateImageView.swift in Sources */,

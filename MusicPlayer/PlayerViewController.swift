@@ -10,7 +10,6 @@ import UIKit
 
 class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
     var timer: NSTimer?
     var player: MP3Player?
     var isPlaying = false
@@ -54,6 +53,12 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func setNotification() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "setTrackInfo:", name: "SetTrackInfo", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadData", name: "ReloadData", object: nil)
+    }
+    
+    func reloadData() {
+        player?.refreshTracks()
+        print("track refreshed")
     }
     
     func setTrackInfo(notification: NSNotification) {
@@ -90,6 +95,7 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         startTimer()
     }
+    
     
     private func setWidgetEnabled(isEnable: Bool) {
         returnButton.enabled = isEnable

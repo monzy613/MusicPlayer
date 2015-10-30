@@ -11,6 +11,7 @@ import UIKit
 class FirstViewController: UIViewController, UITableViewDelegate {
 
     
+    
     var trackTableViewDelegate: UITableViewDelegate?
     var trackTableViewDataSource: UITableViewDataSource?
     @IBOutlet var trackTableView: UITableView!
@@ -18,7 +19,15 @@ class FirstViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         trackTableView.delegate = trackTableViewDelegate
         trackTableView.dataSource = trackTableViewDataSource
-        // Do any additional setup after loading the view.
+        setNotification()
+    }
+    
+    func setNotification() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadData", name: "ReloadData", object: nil)
+    }
+    
+    func reloadData() {
+        trackTableView?.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

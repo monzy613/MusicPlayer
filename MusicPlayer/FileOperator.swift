@@ -11,7 +11,6 @@ import UIKit
 class FileOperator: NSObject {
     
     static private var fileManager = NSFileManager.defaultManager()
-    
     static private var musicDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] + "/Musics/"
     
     class func makeMusicDir() {
@@ -24,6 +23,24 @@ class FileOperator: NSObject {
         }
         catch {
 
+        }
+    }
+    
+    class func storeMusicWithPath(path: String) {
+        //file:///private/var/mobile/Containers/Data/Application/xxxxxx/.nextToYou.mp3
+        do {
+            var pathComponents = (path as NSString).pathComponents
+            let filename = (path as NSString).lastPathComponent
+            pathComponents.removeFirst()
+            pathComponents.removeFirst()
+            pathComponents.insert("/", atIndex: 0)
+            let srcPath = NSString.pathWithComponents(pathComponents)
+            let destPath = "\(musicDirectory)\(filename)"
+            try fileManager.moveItemAtPath(srcPath, toPath: destPath)
+            DebugClass.console = "file [\(filename)] received"
+        }
+        catch {
+            DebugClass.console = "move item exception: \(error)"
         }
     }
     
