@@ -26,8 +26,8 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet var nextTrackButton: UIButton!
     @IBOutlet var returnButton: UIButton!
     @IBOutlet var forwardButton: UIButton!
-    @IBOutlet var musicListTableView: UITableView!
     
+    @IBOutlet var backgroundTrackImageView: UIImageView!
     
     @IBAction func startSliding(sender: UISlider) {
         print("start sliding")
@@ -53,19 +53,26 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func setNotification() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "setTrackInfo:", name: "SetTrackInfo", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadData", name: "ReloadData", object: nil)
-    }
-    
-    func reloadData() {
-        player?.refreshTracks()
-        print("track refreshed")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setWEnabled:", name: "SetWidgetEnabled", object: nil)
     }
     
     func setTrackInfo(notification: NSNotification) {
+        
+        if let artworkData = player?.getArtworkForTrack((player?.currentTrackIndex)!) {
+            backgroundTrackImageView.image = UIImage(data: artworkData)
+        } else {
+            backgroundTrackImageView.image = UIImage(named: "defaultTrackIcon")
+        }
+        
         let trackInfo = notification.object as! [String: String]
         print("setTrackInfo:(\(trackInfo))")
         durationTimeLabel.text = trackInfo["Duration"]
         trackNameLabel.text = trackInfo["TrackName"]
+    }
+    
+    func setWEnabled(notification: NSNotification) {
+        let enabled = notification.object as! Bool
+        setWidgetEnabled(enabled)
     }
     
     func addPageView() {
@@ -78,8 +85,6 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //musicListTableView.delegate = self
-        //musicListTableView.dataSource = self
         addPageView()
         setNotification()
         FileOperator.makeMusicDir()
@@ -92,6 +97,12 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
             trackNameLabel.text = "No Track"
             setWidgetEnabled(false)
             return
+        } else {
+            if let artworkData = player?.getArtworkForTrack((player?.currentTrackIndex)!) {
+                backgroundTrackImageView.image = UIImage(data: artworkData)
+            } else {
+                backgroundTrackImageView.image = UIImage(named: "defaultTrackIcon")
+            }
         }
         startTimer()
     }
@@ -173,17 +184,20 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MusicListCell") as! MusicListCellTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("MusicListCell") as! TrackListCell
         cell.configureCellWithTrackInfo("\((player?.trackNames[indexPath.row])!)", _trackIndex: indexPath.row + 1)
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        player?.playWithTrackIndex(indexPath.row)
+        switchPlay(true)
         pageRootViewController?.trackTableViewController?.trackTableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
+    
     
 }

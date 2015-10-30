@@ -15,28 +15,32 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
     var currentTrackIndex = 0
     var tracks = [String]()
     var trackNames = [String]()
-    var trackAssets = [[String: AnyObject]]()
     var trackAVURLAssets = [AVURLAsset]()
     var trackCount = 0
     
     override init() {
         tracks = FileOperator.getMp3FilePath()
         super.init()
+        trackCount = tracks.count
+        MP3Player.instance = self
         if tracks.count == 0 {
             return
         }
         getTrackAssets(tracks)
-        trackCount = tracks.count
         getTrackNames()
         queueTrack()
-        MP3Player.instance = self
     }
     
     func refreshTracks() {
+        let previousCount = trackCount
         tracks = FileOperator.getMp3FilePath()
         getTrackAssets(tracks)
         trackCount = tracks.count
         getTrackNames()
+        if previousCount == 0 {
+            queueTrack()
+            NSNotificationCenter.defaultCenter().postNotificationName("SetWidgetEnabled", object: true)
+        }
     }
     
     func queueTrack() {
@@ -67,17 +71,11 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
     }
 
     func getTrackAssets(withPaths: [String]) {
+        trackAVURLAssets.removeAll()
         for path in withPaths {
             let musicUrl = NSURL(fileURLWithPath: path)
             let mp3Asset = AVURLAsset(URL: musicUrl)
             trackAVURLAssets.append(mp3Asset)
-            var assetDic = [String: AnyObject]()
-            for metaDataItem in mp3Asset.metadata {
-                if metaDataItem.commonKey != nil {
-                    assetDic.updateValue(metaDataItem.value!, forKey: metaDataItem.commonKey!)
-                }
-            }
-            trackAssets.append(assetDic)
         }
     }
     
@@ -115,6 +113,17 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
             player?.pause()
         }
         
+    }
+    
+    func playWithTrackIndex(trackIndex: Int) {
+        if trackIndex < trackCount {
+            currentTrackIndex = trackIndex
+            if player?.playing == false {
+                NSNotificationCenter.defaultCenter().postNotificationName("PlayToRotate", object: nil)
+            }
+            queueTrack()
+            player?.play()
+        }
     }
     
     private func getTrackNames() {

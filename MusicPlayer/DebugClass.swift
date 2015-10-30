@@ -9,5 +9,9 @@
 import UIKit
 
 class DebugClass: NSObject {
-    static var console: String?
+    static var console: String? {
+        didSet {
+            NSNotificationCenter.defaultCenter().postNotificationName("inDeviceDebug", object: console)
+        }
+    }
 }

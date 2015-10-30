@@ -18,8 +18,15 @@ class ThirdViewController: UIViewController {
         } else {
             consoleLabel.text = "no console"
         }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "console:", name: "inDeviceDebug", object: nil)
 
         // Do any additional setup after loading the view.
+    }
+    
+    func console(notification: NSNotification) {
+        let log = notification.object as! String
+        consoleLabel.text = log
+        print("[inDeviceDebug]\(log)")
     }
 
     override func didReceiveMemoryWarning() {
