@@ -33,14 +33,14 @@
                                 <animations/>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQz-At-sLl">
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQz-At-sLl">
                                 <rect key="frame" x="155" y="594" width="65" height="65"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lQz-At-sLl" secondAttribute="height" multiplier="1:1" id="7je-DE-bHG"/>
                                     <constraint firstAttribute="width" secondItem="lQz-At-sLl" secondAttribute="height" multiplier="1:1" id="HlF-jH-oRg"/>
                                 </constraints>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="play_green"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -52,13 +52,13 @@
                                     <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="khg-zo-0zH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCK-i1-U9n">
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCK-i1-U9n">
                                 <rect key="frame" x="81" y="594" width="66" height="65"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="YCK-i1-U9n" secondAttribute="height" multiplier="1:1" id="G1g-Iy-Scq"/>
                                 </constraints>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="pre"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -69,14 +69,14 @@
                                     <action selector="preButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XME-5q-1gF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivo-R1-oLY">
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivo-R1-oLY">
                                 <rect key="frame" x="228" y="594" width="66" height="65"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ivo-R1-oLY" secondAttribute="height" multiplier="1:1" id="Z1E-P0-n9d"/>
                                     <constraint firstAttribute="width" secondItem="ivo-R1-oLY" secondAttribute="height" multiplier="1:1" id="aWB-n5-ZTl"/>
                                 </constraints>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="next"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -98,14 +98,14 @@
                                     <action selector="startSliding:" destination="BYZ-38-t0r" eventType="touchDown" id="z6t-TY-2Nk"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fys-Gw-FuX">
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fys-Gw-FuX">
                                 <rect key="frame" x="8" y="594" width="65" height="65"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fys-Gw-FuX" secondAttribute="height" multiplier="1:1" id="GcO-d9-A0e"/>
                                     <constraint firstAttribute="width" secondItem="Fys-Gw-FuX" secondAttribute="height" multiplier="1:1" id="YUz-SF-Yni"/>
                                 </constraints>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="pre_10sec"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -116,14 +116,14 @@
                                     <action selector="returnSomeSeconds:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sd8-64-tBA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fka-vB-sx6">
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fka-vB-sx6">
                                 <rect key="frame" x="302" y="594" width="65" height="65"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fka-vB-sx6" secondAttribute="height" multiplier="1:1" id="dK6-Xk-Osy"/>
                                     <constraint firstAttribute="width" secondItem="fka-vB-sx6" secondAttribute="height" multiplier="1:1" id="wgK-jF-Ka3"/>
                                 </constraints>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="next_10sec"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -242,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113.5" y="322.5"/>
+            <point key="canvasLocation" x="415.5" y="162.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nbW-FG-Qab">
@@ -311,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvf-iU-YT3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65.5" y="1039.5"/>
+            <point key="canvasLocation" x="415.5" y="-639.5"/>
         </scene>
         <!--Test Rotate View Controller-->
         <scene sceneID="YCZ-oz-PZS">
@@ -374,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EzC-Gm-EmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="876.5" y="-639.5"/>
+            <point key="canvasLocation" x="887.5" y="-639.5"/>
         </scene>
         <!--Page Root View Controller-->
         <scene sceneID="VAQ-gf-nIe">
@@ -457,7 +457,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zyv-nh-TaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="163"/>
+            <point key="canvasLocation" x="415.5" y="926.5"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="WgG-6l-LnY">
@@ -468,7 +468,7 @@
                         <viewControllerLayoutGuide type="bottom" id="CWn-a5-Xo5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GWC-OT-8tL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultTrackIcon" translatesAutoresizingMaskIntoConstraints="NO" id="JaG-MP-hUf">
@@ -476,19 +476,19 @@
                                 <animations/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1oN-ke-0nJ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MusicListCell" rowHeight="56" id="S4Y-Dy-olx" customClass="TrackListCell" customModule="MusicPlayer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="56"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S4Y-Dy-olx" id="0Ka-aF-WfW">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="trackname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esO-BE-VrZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="trackname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esO-BE-VrZ">
                                                     <rect key="frame" x="8" y="8" width="584" height="25"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
@@ -530,13 +530,14 @@
                             </mask>
                         </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="trackTableView" destination="1oN-ke-0nJ" id="RpH-Zd-u8e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwm-Bd-Gf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2020" y="-185"/>
+            <point key="canvasLocation" x="852.5" y="926.5"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="3dq-gR-IhN">
@@ -561,7 +562,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7EZ-vd-Lym" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2530.5" y="299.5"/>
+            <point key="canvasLocation" x="1295.5" y="926.5"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="Gq8-5X-bG6">
@@ -599,7 +600,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wbc-ea-i4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2028" y="516"/>
+            <point key="canvasLocation" x="1731.5" y="926.5"/>
         </scene>
     </scenes>
     <resources>

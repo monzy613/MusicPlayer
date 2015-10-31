@@ -179,6 +179,16 @@
 			path = Spring;
 			sourceTree = "<group>";
 		};
+		18C5278F1BE45D78001C293A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				18295E1C1BE2FFFC0035EFA7 /* DebugClass.swift */,
+				182464EC1BE109E4004A4242 /* ToolSet.swift */,
+				182464E91BE0D657004A4242 /* FileOperator.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		18F8F7E11BE0693700FD657F = {
 			isa = PBXGroup;
 			children = (
@@ -201,24 +211,22 @@
 		18F8F7EC1BE0693700FD657F /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				18C5278F1BE45D78001C293A /* Utilities */,
 				185F3DDB1BE2372B0047644B /* Spring */,
 				186F37561BE1B553006124B4 /* PageRootViewController.swift */,
 				186F374F1BE1AD85006124B4 /* FirstViewController.swift */,
 				186F37501BE1AD85006124B4 /* SecondViewController.swift */,
 				186F37511BE1AD85006124B4 /* ThirdViewController.swift */,
-				182464E91BE0D657004A4242 /* FileOperator.swift */,
-				182464EC1BE109E4004A4242 /* ToolSet.swift */,
 				18F8F8161BE06CE400FD657F /* MP3Player.swift */,
 				18F8F8181BE06FA100FD657F /* PlayerViewController.swift */,
 				187B7E111BE1232E00D95DD3 /* MusicListCellTableViewCell.swift */,
 				18C5278D1BE44C12001C293A /* TrackListCell.swift */,
 				185F3E191BE23F870047644B /* RotateImageView.swift */,
-				18F8F7F11BE0693700FD657F /* Main.storyboard */,
 				185F3E1B1BE242340047644B /* TestRotateViewController.swift */,
 				18F8F7ED1BE0693700FD657F /* AppDelegate.swift */,
-				18295E1C1BE2FFFC0035EFA7 /* DebugClass.swift */,
-				18F8F7F71BE0693700FD657F /* Assets.xcassets */,
+				18F8F7F11BE0693700FD657F /* Main.storyboard */,
 				18F8F7F91BE0693700FD657F /* LaunchScreen.storyboard */,
+				18F8F7F71BE0693700FD657F /* Assets.xcassets */,
 				18F8F7FC1BE0693700FD657F /* Info.plist */,
 				18F8F7F41BE0693700FD657F /* MusicPlayer.xcdatamodeld */,
 			);
