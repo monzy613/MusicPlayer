@@ -222,10 +222,10 @@
 				187B7E111BE1232E00D95DD3 /* MusicListCellTableViewCell.swift */,
 				18C5278D1BE44C12001C293A /* TrackListCell.swift */,
 				185F3E191BE23F870047644B /* RotateImageView.swift */,
-				185F3E1B1BE242340047644B /* TestRotateViewController.swift */,
 				18F8F7ED1BE0693700FD657F /* AppDelegate.swift */,
 				18F8F7F11BE0693700FD657F /* Main.storyboard */,
 				18F8F7F91BE0693700FD657F /* LaunchScreen.storyboard */,
+				185F3E1B1BE242340047644B /* TestRotateViewController.swift */,
 				18F8F7F71BE0693700FD657F /* Assets.xcassets */,
 				18F8F7FC1BE0693700FD657F /* Info.plist */,
 				18F8F7F41BE0693700FD657F /* MusicPlayer.xcdatamodeld */,
@@ -516,9 +516,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MusicPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Monzy.Zhang.MusicPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -527,9 +529,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MusicPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Monzy.Zhang.MusicPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

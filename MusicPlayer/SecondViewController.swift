@@ -29,7 +29,14 @@ class SecondViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         if MP3Player.instance?.player?.playing == true {
             turnOnRotating()
+            trackImageView?.awakeFromNib()
         }
+        trackImageView?.animation = "slideDown"
+        trackImageView?.animate()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        
     }
     
     func turnOnRotating() {

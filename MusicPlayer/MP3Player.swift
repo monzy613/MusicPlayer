@@ -80,6 +80,9 @@ class MP3Player: NSObject, AVAudioPlayerDelegate {
     }
     
     func getArtworkForTrack(trackNumber: Int) -> NSData? {
+        if trackNumber >= trackCount {
+            return nil
+        }
         let asset = trackAVURLAssets[trackNumber]
         var artworkData: NSData = NSData()
         var isArtworkAvailable = false

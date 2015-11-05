@@ -42,8 +42,7 @@ class PageRootViewController: UIViewController, UIPageViewControllerDataSource, 
         if currentPage > 0 {
             animationDirection = .Reverse
         }
-//        pageViewController?.setViewControllers([(self.storyboard?.instantiateViewControllerWithIdentifier(firstIdentifier!))!], direction: animationDirection, animated: true, completion: nil)
-        pageViewController?.setViewControllers([trackTableViewController!], direction: animationDirection, animated: true, completion: nil)
+        pageViewController?.setViewControllers([trackTableViewController!], direction: animationDirection, animated: false, completion: nil)
         currentPage = 0
         setCurrentIndex(0)
     }
@@ -58,7 +57,7 @@ class PageRootViewController: UIViewController, UIPageViewControllerDataSource, 
         } else {
             animationDirection = .Forward
         }
-        pageViewController?.setViewControllers([(self.storyboard?.instantiateViewControllerWithIdentifier(secondIdentifier!))!], direction: animationDirection, animated: true, completion: nil)
+        pageViewController?.setViewControllers([(self.storyboard?.instantiateViewControllerWithIdentifier(secondIdentifier!))!], direction: animationDirection, animated: false, completion: nil)
         currentPage = 1
         setCurrentIndex(1)
     }
@@ -71,7 +70,7 @@ class PageRootViewController: UIViewController, UIPageViewControllerDataSource, 
         if currentPage < 2 {
             animationDirection = .Forward
         }
-        pageViewController?.setViewControllers([(self.storyboard?.instantiateViewControllerWithIdentifier(thirdIdentifier!))!], direction: animationDirection, animated: true, completion: nil)
+        pageViewController?.setViewControllers([(self.storyboard?.instantiateViewControllerWithIdentifier(thirdIdentifier!))!], direction: animationDirection, animated: false, completion: nil)
         currentPage = 2
         setCurrentIndex(2)
     }
@@ -139,23 +138,23 @@ class PageRootViewController: UIViewController, UIPageViewControllerDataSource, 
             firstButton.enabled = false
             secondButton.enabled = true
             thirdButton.enabled = true
-            firstButton.backgroundColor = .whiteColor()
-            secondButton.backgroundColor = .clearColor()
-            thirdButton.backgroundColor = .clearColor()
+            firstButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            secondButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+            thirdButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
         } else if index == 1 {
             firstButton.enabled = true
             secondButton.enabled = false
             thirdButton.enabled = true
-            firstButton.backgroundColor = .clearColor()
-            secondButton.backgroundColor = .whiteColor()
-            thirdButton.backgroundColor = .clearColor()
+            firstButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+            secondButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            thirdButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
         } else if index == 2 {
             firstButton.enabled = true
             secondButton.enabled = true
             thirdButton.enabled = false
-            firstButton.backgroundColor = .clearColor()
-            secondButton.backgroundColor = .clearColor()
-            thirdButton.backgroundColor = .whiteColor()
+            firstButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+            secondButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+            thirdButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         }
     }
     

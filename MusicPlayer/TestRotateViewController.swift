@@ -23,6 +23,24 @@ class TestRotateViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func addBlur(sender: UIButton) {
+        rotateImageView.openBlur()
+    }
+    
+    @IBAction func removeBlur(sender: UIButton) {
+        rotateImageView.closeBlur()
+    }
+    
+    @IBAction func slideUp(sender: UIButton) {
+        rotateImageView.animation = "slideUp"
+        rotateImageView.animate()
+    }
+
+    @IBAction func slideDown(sender: UIButton) {
+        rotateImageView.animation = "slideDown"
+        rotateImageView.animate()
+    }
+    
     @IBAction func `switch`(sender: UIButton) {
         if rotateImageView.isRotating {
             rotateImageView.stopRotating()

@@ -9,7 +9,7 @@
 import UIKit
 import CoreGraphics
 
-class RotateImageView: UIImageView {
+class RotateImageView: SpringImageView {
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -17,10 +17,27 @@ class RotateImageView: UIImageView {
         // Drawing code
     }
     */
+    
+    var blurView: UIVisualEffectView?
     var timer: NSTimer?
     var rotateParameter: Double = 1000
     var isRotating = false
     var currentAngle: CGFloat = 0
+    
+    func openBlur() {
+        self.blurView = nil
+        if self.blurView == nil {
+            self.blurView = UIVisualEffectView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height))
+            self.blurView?.effect = UIBlurEffect(style: .Light)
+            self.blurView?.layer.cornerRadius = self.frame.width / 2
+        }
+        self.addSubview(blurView!)
+        self.blurView?.clipsToBounds = true
+    }
+    
+    func closeBlur() {
+        blurView?.removeFromSuperview()
+    }
     
     func startRotating() {
         if isRotating {
@@ -28,7 +45,7 @@ class RotateImageView: UIImageView {
         }
         isRotating = true
         if superview != nil {
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.003, target: self, selector: "rotate", userInfo: nil, repeats: true)
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.003, target: self, selector: "rotateImageView", userInfo: nil, repeats: true)
         }
     }
     
@@ -40,8 +57,13 @@ class RotateImageView: UIImageView {
         timer?.invalidate()
     }
     
-    func rotate() {
+    func refreshRotate() {
+        transform = CGAffineTransformMakeRotation(currentAngle)
+    }
+    
+    func rotateImageView() {
         transform = CGAffineTransformMakeRotation(currentAngle)
         currentAngle += CGFloat(M_PI) / CGFloat(rotateParameter)
     }
+    
 }
